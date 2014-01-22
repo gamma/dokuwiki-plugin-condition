@@ -1,4 +1,5 @@
-====== Condition Plugin for DokuWiki ======
+Condition Plugin for DokuWiki
+=============================
 
 Use :
 
