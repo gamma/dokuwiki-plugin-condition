@@ -51,7 +51,7 @@ class syntax_plugin_condition extends DokuWiki_Syntax_Plugin {
 	}
 
 	// Handle the match
-	function handle($match, $state, $pos, &$handler) {
+	function handle($match, $state, $pos, Doku_Handler $handler) {
 		if($state != DOKU_LEXER_UNMATCHED) return false;
 		
 		// Get allowed test operators
@@ -190,7 +190,7 @@ class syntax_plugin_condition extends DokuWiki_Syntax_Plugin {
 	/**
 	 * Create output
 	 */
-	function render($mode, &$renderer, $data) {
+	function render($mode, Doku_Renderer $renderer, $data) {
 		global $INFO;
 		if(count($data) != 2) return false;
 		if($mode == 'xhtml') {
