@@ -247,12 +247,6 @@ class syntax_plugin_condition extends DokuWiki_Syntax_Plugin {
 			$bug = false;
 			$this->_loadtester();
 			$ok = $this->_processblocks($blocks, $bug);
-			
-			// Check if a TOC exists *before* accessing it
-			if ( !is_array($renderer->meta['description']['tableofcontents']) ) {
-				$renderer->meta['description']['tableofcontents'] = array();
-			}
-			
 			// Render content if all went well
 			$metatoc = $renderer->meta['description']['tableofcontents'];
 			if(!$bug) {
@@ -261,6 +255,10 @@ class syntax_plugin_condition extends DokuWiki_Syntax_Plugin {
 			  	if ( in_array($instruction[0], array('document_start', 'document_end') ) ) continue;
 			    call_user_func_array(array(&$renderer, $instruction[0]), $instruction[1]);
 			  }
+			}
+			
+			if ( !is_array($renderer->meta['description']['tableofcontents']) ) {
+				$renderer->meta['description']['tableofcontents'] = array();
 			}
 
 			$renderer->meta['description']['tableofcontents'] = array_merge($metatoc, $renderer->meta['description']['tableofcontents']); 
