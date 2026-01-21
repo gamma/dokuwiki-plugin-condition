@@ -3,7 +3,7 @@
 base	condition
 author  Etienne Meleard, Gerry Weißbach / i-net software
 email   etienne.meleard@free.fr, gweissbach@inetsoftware.de
-date    2025-08-08
+date    2026-01-21
 name    Condition plugin
 desc    render a block if a condition if fullfilled, user custom tests can be easily added
 url     http://wiki.splitbrain.org/plugin:condition
